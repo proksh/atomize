@@ -38,7 +38,7 @@ class Dropdown extends Component {
   handleClick() {
     const { isOpen, onClick } = this.props;
 
-    if (!isOpen) {
+    if (isOpen) {
       document.addEventListener("mousedown", this.handleOutsideClick, false);
     } else {
       document.removeEventListener("mousedown", this.handleOutsideClick, false);
@@ -62,6 +62,7 @@ class Dropdown extends Component {
       isOpen,
       onClick,
       targetHover,
+      prefix,
       openSuffix,
       closeSuffix,
       isLoading,
@@ -84,6 +85,7 @@ class Dropdown extends Component {
         bg={isOpen ? focusBg : bg}
         {...rest}
       >
+        {prefix}
         {children}
         {isLoading ? (
           <Icon name="Loading" color="gray600" size="18px" />

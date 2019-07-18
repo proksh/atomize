@@ -1,4 +1,3 @@
-import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { withTheme } from "../core/theming";
 
@@ -21,9 +20,10 @@ const StyleReset = createGlobalStyle`
     color: #000;
   }
 
-  p { font-size: ${props => props.theme.textSize.size["body"]}}
-
-  a:visited { color: ${props => props.theme.colors["info800"]};}
+  p, h1, h2, h3, h4, h5, h6 { font-size: ${props =>
+    props.theme.textSize.size["body"]}; line-height: ${props =>
+  props.theme.textSize.height["body"]}
+  }
 
   a {
     color: ${props => props.theme.colors["info700"]};
@@ -32,6 +32,10 @@ const StyleReset = createGlobalStyle`
   }
 
   input { border: none }
+
+  button {
+    border: none;
+  }
 
   pre {
     margin: 0;

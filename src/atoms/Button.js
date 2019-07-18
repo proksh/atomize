@@ -5,58 +5,59 @@ import { withTheme } from "../core/theming";
 
 import Icon from "./Icon";
 
-const BaseButton = ({
-  d,
-  pos,
-  top,
-  bottom,
-  left,
-  right,
-  justify,
-  align,
-  flexDir,
-  flexGrow,
-  flexWrap,
-  order,
-  m,
-  p,
-  rounded,
-  border,
-  borderColor,
-  h,
-  maxH,
-  minH,
-  w,
-  minW,
-  maxW,
-  cursor,
-  textSize,
-  textColor,
-  textWeight,
-  textAlign,
-  textTransform,
-  fontFamily,
-  shadow,
-  transition,
-  transform,
-  transformOrigin,
-  zIndex,
-  overflow,
-  opacity,
-  hoverBg,
-  hoverTextColor,
-  hoverBorderColor,
-  hoverShadow,
-  focusBorderColor,
-  theme,
-  prefix,
-  isLoading,
-  suffix,
-  children,
-  ...rest
-}) => {
+const BaseButton = React.forwardRef((props, ref) => {
+  const {
+    d,
+    pos,
+    top,
+    bottom,
+    left,
+    right,
+    justify,
+    align,
+    flexDir,
+    flexGrow,
+    flexWrap,
+    order,
+    m,
+    p,
+    rounded,
+    border,
+    borderColor,
+    h,
+    maxH,
+    minH,
+    w,
+    minW,
+    maxW,
+    cursor,
+    textSize,
+    textColor,
+    textWeight,
+    textAlign,
+    textTransform,
+    fontFamily,
+    shadow,
+    transition,
+    transform,
+    transformOrigin,
+    zIndex,
+    overflow,
+    opacity,
+    hoverBg,
+    hoverTextColor,
+    hoverBorderColor,
+    hoverShadow,
+    focusBorderColor,
+    theme,
+    prefix,
+    isLoading,
+    suffix,
+    children,
+    ...rest
+  } = props;
   return (
-    <button {...rest}>
+    <button ref={ref} {...rest}>
       {isLoading && (
         <Icon
           name="Loading"
@@ -70,7 +71,7 @@ const BaseButton = ({
       {suffix}
     </button>
   );
-};
+});
 
 const Button = styled(BaseButton)`
   ${props => functions.makeResponsive("display", props.d)};
@@ -121,7 +122,7 @@ const Button = styled(BaseButton)`
     functions.makeResponsive("text-transform", props.textTransform)};
   ${props =>
     props.shadow && `box-shadow: ${props.theme.shadows[props.shadow]}`};
-  ${props => `transition: ${props.transition || props.theme.transition}`};
+  ${props => props.transition && `transition: ${props.theme.transition}`};
   ${props =>
     props.textSize &&
     functions.makeResponsiveFontSize(props.textSize, props.theme.textSize)};
@@ -189,7 +190,8 @@ Button.defaultProps = {
   textColor: "white",
   textSize: "body",
   textWeight: "500",
-  fontFamily: "primary"
+  fontFamily: "primary",
+  transition: true
 };
 
 export default withTheme(Button);

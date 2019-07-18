@@ -4,50 +4,48 @@ import { textSize } from "../constants/_variables";
 import { functions } from "../functions/_functions";
 import { withTheme } from "../core/theming";
 
-/**
- * Custom Tag For tags other than p
- */
-const CustomTag = ({
-  d,
-  pos,
-  top,
-  bottom,
-  left,
-  right,
-  h,
-  maxH,
-  minH,
-  justify,
-  align,
-  flexDir,
-  flexGrow,
-  flexWrap,
-  order,
-  rounded,
-  m,
-  p,
-  bg,
-  hoverBg,
-  textColor,
-  textWeight,
-  textAlign,
-  textTransform,
-  textDecor,
-  textSize,
-  transition,
-  w,
-  maxW,
-  minW,
-  fontFamily,
-  opacity,
-  hoverTextColor,
-  tag,
-  children,
-  theme,
-  ...props
-}) => {
-  return React.createElement(`${tag}`, props, children);
-};
+const CustomTag = React.forwardRef((props, ref) => {
+  const {
+    d,
+    pos,
+    top,
+    bottom,
+    left,
+    right,
+    h,
+    maxH,
+    minH,
+    justify,
+    align,
+    flexDir,
+    flexGrow,
+    flexWrap,
+    order,
+    rounded,
+    m,
+    p,
+    bg,
+    hoverBg,
+    textColor,
+    textWeight,
+    textAlign,
+    textTransform,
+    textDecor,
+    textSize,
+    transition,
+    w,
+    maxW,
+    minW,
+    fontFamily,
+    opacity,
+    hoverTextColor,
+    tag,
+    children,
+    theme,
+    ...rest
+  } = props;
+  return React.createElement(`${tag}`, { ...rest, ref }, children);
+});
 
 /**
  * Style the Text
@@ -82,7 +80,11 @@ const Text = styled(CustomTag)`
   ${props => props.p && functions.findDirection("padding", props.p)};
   ${props =>
     props.bg &&
-    functions.makeResponsive("background", props.theme.colors[props.bg])};
+    functions.makeResponsiveProperty(
+      props.bg,
+      "background",
+      props.theme.colors
+    )};
   ${props =>
     props.textColor &&
     functions.makeResponsive("color", props.theme.colors[props.textColor])};
@@ -112,12 +114,19 @@ const Text = styled(CustomTag)`
   ${props =>
     props.opacity && functions.makeResponsive("opacity", props.opacity)};
 
+  :visited {
+    ${props =>
+      props.textColor &&
+      functions.makeResponsive("color", props.theme.colors[props.textColor])};
+  }
+
   :hover {
     ${props =>
       props.hoverBg &&
-      functions.makeResponsive(
+      functions.makeResponsiveProperty(
+        props.hoverBg,
         "background",
-        props.theme.colors[props.hoverBg]
+        props.theme.colors
       )};
     ${props =>
       props.hoverTextColor &&

@@ -3,66 +3,67 @@ import styled from "styled-components";
 import { functions } from "../functions/_functions";
 import { withTheme } from "../core/theming";
 
-const CustomTag = ({
-  d,
-  pos,
-  top,
-  bottom,
-  left,
-  right,
-  justify,
-  align,
-  flexDir,
-  flexGrow,
-  flexWrap,
-  order,
-  m,
-  p,
-  rounded,
-  border,
-  borderColor,
-  h,
-  maxH,
-  minH,
-  w,
-  minW,
-  maxW,
-  cursor,
-  bg,
-  bgImg,
-  bgSize,
-  bgRepeat,
-  bgPos,
-  textSize,
-  textColor,
-  textWeight,
-  textAlign,
-  textTransform,
-  fontFamily,
-  shadow,
-  transition,
-  transform,
-  transformOrigin,
-  zIndex,
-  overflow,
-  opacity,
-  hoverBg,
-  hoverTextColor,
-  hoverBorderColor,
-  hoverShadow,
-  focusBorderColor,
-  isOpen,
-  hover,
-  offset,
-  size,
-  targetHover,
-  theme,
-  tag,
-  children,
-  ...rest
-}) => {
-  return React.createElement(`${tag}`, rest, children);
-};
+const CustomTag = React.forwardRef((props, ref) => {
+  const {
+    d,
+    pos,
+    top,
+    bottom,
+    left,
+    right,
+    justify,
+    align,
+    flexDir,
+    flexGrow,
+    flexWrap,
+    order,
+    m,
+    p,
+    rounded,
+    border,
+    borderColor,
+    h,
+    maxH,
+    minH,
+    w,
+    minW,
+    maxW,
+    cursor,
+    bg,
+    bgImg,
+    bgSize,
+    bgRepeat,
+    bgPos,
+    textSize,
+    textColor,
+    textWeight,
+    textAlign,
+    textTransform,
+    fontFamily,
+    shadow,
+    transition,
+    transform,
+    transformOrigin,
+    zIndex,
+    overflow,
+    opacity,
+    hoverBg,
+    hoverTextColor,
+    hoverBorderColor,
+    hoverShadow,
+    focusBorderColor,
+    isOpen,
+    hover,
+    offset,
+    size,
+    targetHover,
+    theme,
+    tag,
+    children,
+    ...rest
+  } = props;
+  return React.createElement(`${tag}`, { ...rest, ref }, children);
+});
 
 const Div = styled(CustomTag)`
   box-sizing: border-box;
@@ -105,7 +106,11 @@ const Div = styled(CustomTag)`
   ${props => props.cursor && functions.makeResponsive("cursor", props.cursor)};
   ${props =>
     props.bg &&
-    functions.makeResponsive("background", props.theme.colors[props.bg])};
+    functions.makeResponsiveProperty(
+      props.bg,
+      "background",
+      props.theme.colors
+    )};
   ${props => props.bgImg && `background-image: url(${props.bgImg})`};
   ${props =>
     props.bgSize && functions.makeResponsive("background-size", props.bgSize)};
@@ -129,6 +134,9 @@ const Div = styled(CustomTag)`
   ${props =>
     props.textTransform &&
     functions.makeResponsive("text-transform", props.textTransform)};
+  ${props =>
+    props.fontFamily &&
+    `font-family: ${props.theme.fontFamily[props.fontFamily]}`};
   ${props => props.transition && `transition: ${props.theme.transition}`};
   ${props =>
     props.transform && functions.makeResponsive("transform", props.transform)};
@@ -146,9 +154,10 @@ const Div = styled(CustomTag)`
   :hover {
     ${props =>
       props.hoverBg &&
-      functions.makeResponsive(
+      functions.makeResponsiveProperty(
+        props.hoverBg,
         "background",
-        props.theme.colors[props.hoverBg]
+        props.theme.colors
       )};
     ${props =>
       props.hoverTextColor &&

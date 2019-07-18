@@ -115,6 +115,36 @@ const makeResponsiveFontSize = (i, textSize) => {
   `;
 };
 
+const makeResponsiveProperty = (i, property, themeValues) => {
+  return css`
+  ${
+    typeof i === "string" || typeof i === "number"
+      ? `${property}: ${themeValues[i]};`
+      : i.xs && `${property}: ${themeValues[i.xs]};`
+  }
+
+    ${i.sm &&
+      `@media (min-width: 576px) {
+        ${property}: ${themeValues[i.sm]}};
+      }`}
+
+    ${i.md &&
+      `@media (min-width: 768px) {
+        ${property}: ${themeValues[i.md]}};
+      }`}
+
+    ${i.lg &&
+      `@media (min-width: 992px) {
+        ${property}: ${themeValues[i.lg]}};
+      }`}
+
+    ${i.xl &&
+      `@media (min-width: 1200px) {
+        ${property}: ${themeValues[i.xl]}};
+      }`}
+  `;
+};
+
 const makeResponsiveShadow = (i, themeShadow) => {
   return css`
   ${
@@ -150,5 +180,6 @@ export const functions = {
   makeResponsive,
   findRoundedDirection,
   makeResponsiveFontSize,
-  makeResponsiveShadow
+  makeResponsiveShadow,
+  makeResponsiveProperty
 };

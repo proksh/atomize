@@ -51,7 +51,7 @@ export default class Collapse extends Component {
      * Default Style for Backlayer
      */
     const defaultStyle = {
-      transition: `all ${duration}ms ease-in-out`,
+      transition: `height ${duration}ms ease-in-out`,
       height: 0,
       opacity: 0
     };

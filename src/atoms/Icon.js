@@ -4,30 +4,31 @@ import { iconPaths } from "../constants/_iconPaths";
 import { functions } from "../functions/_functions";
 import { withTheme } from "../core/theming";
 
-const BaseIcon = ({
-  d,
-  size,
-  order,
-  m,
-  p,
-  transform,
-  top,
-  bottom,
-  left,
-  right,
-  cursor,
-  name,
-  color,
-  hoverColor,
-  ...rest
-}) => {
+const BaseIcon = React.forwardRef((props, ref) => {
+  const {
+    d,
+    size,
+    order,
+    m,
+    p,
+    transform,
+    top,
+    bottom,
+    left,
+    right,
+    cursor,
+    name,
+    color,
+    hoverColor,
+    ...rest
+  } = props;
   const IconName = iconPaths[name];
   return (
-    <svg viewBox="0 0 24 24" {...rest}>
+    <svg viewBox="0 0 24 24" {...rest} ref={ref}>
       <IconName color={rest.theme.colors[color]} />
     </svg>
   );
-};
+});
 
 const Icon = styled(BaseIcon)`
   ${props => props.d && functions.makeResponsive("display", props.d)};

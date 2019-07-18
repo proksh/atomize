@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import { Div, StyleReset } from "atomize";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.node = React.createRef();
+  }
+
+  componentDidMount() {
+    console.log(this.node);
+  }
   render() {
     return (
       <Div>

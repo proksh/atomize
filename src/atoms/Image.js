@@ -1,10 +1,45 @@
 import React from "react";
 import styled from "styled-components";
-import { themeVars, colorVar } from "../constants/_variables";
 import { functions } from "../functions/_functions";
 import { withTheme } from "../core/theming";
 
-const BaseImg = styled.img`
+const ImageTag = React.forwardRef((props, ref) => {
+  const {
+    d,
+    pos,
+    top,
+    bottom,
+    left,
+    right,
+    flexGrow,
+    order,
+    m,
+    p,
+    rounded,
+    border,
+    borderColor,
+    h,
+    maxH,
+    minH,
+    w,
+    minW,
+    maxW,
+    cursor,
+    shadow,
+    transition,
+    transform,
+    transformOrigin,
+    zIndex,
+    opacity,
+    hoverBorderColor,
+    hoverShadow,
+    theme,
+    ...rest
+  } = props;
+  return <img ref={ref} {...rest} />;
+});
+
+const BaseImg = styled(ImageTag)`
   box-sizing: border-box;
   ${props => props.d && functions.makeResponsive("display", props.d)};
   ${props => props.pos && functions.makeResponsive("position", props.pos)};
@@ -14,6 +49,7 @@ const BaseImg = styled.img`
   ${props => props.right && functions.makeResponsive("right", props.right)};
   ${props =>
     props.flexGrow && functions.makeResponsive("flex-grow", props.flexGrow)};
+  ${props => props.order && functions.makeResponsive("order", props.order)};
   ${props => props.m && functions.findDirection("margin", props.m)};
   ${props => props.p && functions.findDirection("padding", props.p)};
   ${props =>
@@ -43,13 +79,14 @@ const BaseImg = styled.img`
     functions.makeResponsive("transform-origin", props.transformOrigin)};
   ${props => props.zIndex && functions.makeResponsive("z-index", props.zIndex)};
   ${props => props.opacity && `opacity: ${props.opacity}`};
+  ${props => props.transition && `transition: ${props.theme.transition}`};
 
   :hover {
     ${props =>
       props.hoverBorderColor &&
       functions.makeResponsive(
         "border-color",
-        colorVar[props.hoverBorderColor]
+        props.theme.colors[props.hoverBorderColor]
       )};
     ${props =>
       props.hoverShadow &&

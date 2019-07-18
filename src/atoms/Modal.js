@@ -75,6 +75,10 @@ class Modal extends Component {
     if (onExiting) onExiting();
   }
 
+  componentWillUnmount() {
+    document.querySelector("body").style.overflow = "auto";
+  }
+
   render() {
     const { children, isOpen, onClose, align, ...rest } = this.props;
 

@@ -75,6 +75,10 @@ class SideDrawer extends Component {
     if (onExiting) onExiting();
   }
 
+  componentWillUnmount() {
+    document.querySelector("body").style.overflow = "auto";
+  }
+
   render() {
     const { children, isOpen, onClose, ...rest } = this.props;
 

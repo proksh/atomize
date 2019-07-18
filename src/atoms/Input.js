@@ -6,47 +6,46 @@ import { withTheme } from "../core/theming";
 import Div from "./Div";
 import Icon from "./Icon";
 
-/**
- * Custom Tag For tags other than p
- */
-const CustomTag = ({
-  d,
-  m,
-  w,
-  maxW,
-  minW,
-  flexGrow,
-  p,
-  rounded,
-  pos,
-  border,
-  borderColor,
-  h,
-  maxH,
-  minH,
-  cursor,
-  bg,
-  textColor,
-  textWeight,
-  textAlign,
-  shadow,
-  transition,
-  textSize,
-  fontFamily,
-  hoverBg,
-  hoverTextColor,
-  hoverBorderColor,
-  hoverShadow,
-  focusBg,
-  focusTextColor,
-  focusShadow,
-  focusBorderColor,
-  tag,
-  children,
-  ...props
-}) => {
-  return React.createElement(`${tag}`, props, children);
-};
+const CustomTag = React.forwardRef((props, ref) => {
+  const {
+    d,
+    m,
+    w,
+    maxW,
+    minW,
+    flexGrow,
+    order,
+    p,
+    rounded,
+    pos,
+    border,
+    borderColor,
+    h,
+    maxH,
+    minH,
+    cursor,
+    bg,
+    textColor,
+    textWeight,
+    textAlign,
+    shadow,
+    transition,
+    textSize,
+    fontFamily,
+    hoverBg,
+    hoverTextColor,
+    hoverBorderColor,
+    hoverShadow,
+    focusBg,
+    focusTextColor,
+    focusShadow,
+    focusBorderColor,
+    tag,
+    children,
+    ...rest
+  } = props;
+  return React.createElement(`${tag}`, { ...rest, ref }, children);
+});
 
 const BaseInput = styled(CustomTag)`
   box-sizing: border-box;
@@ -63,6 +62,7 @@ const BaseInput = styled(CustomTag)`
       "border-color",
       props.theme.colors[props.borderColor]
     )};
+
   ${props => functions.makeResponsive("height", props.h)};
   ${props => props.maxH && functions.makeResponsive("max-height", props.maxH)};
   ${props => props.minH && functions.makeResponsive("min-height", props.minH)};
@@ -84,7 +84,7 @@ const BaseInput = styled(CustomTag)`
     `font-family: ${props.theme.fontFamily[props.fontFamily]}`};
   ${props =>
     props.shadow && `box-shadow: ${props.theme.shadows[props.shadow]}`};
-  ${props => `transition: ${props.transition || props.theme.transition}`};
+  ${props => props.transition && `transition: ${props.theme.transition}`};
   ${props =>
     `font-size: ${props.theme.textSize.size[props.textSize]}; line-height: ${
       props.theme.textSize.height[props.textSize]
@@ -156,13 +156,14 @@ const BaseInput = styled(CustomTag)`
   }
 `;
 
-const Input = ({ children, prefix, isLoading, suffix, ...rest }) => {
+const Input = ({ children, prefix, isLoading, suffix, order, ...rest }) => {
   return (
     <Div
       pos="relative"
       d={rest.d}
       m={rest.m}
       w={rest.w}
+      order={order}
       maxW={rest.maxW}
       minW={rest.minW}
       flexGrow={rest.flexGrow}
@@ -197,7 +198,8 @@ Input.defaultProps = {
   bg: "white",
   textColor: "dark",
   textWeight: "500",
-  focusBorderColor: "gray700"
+  focusBorderColor: "gray700",
+  transition: true
 };
 
 export default withTheme(Input);
