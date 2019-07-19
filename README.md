@@ -59,6 +59,13 @@ ReactDOM.render(<Button />, mountNode);
 - [Molecules](https://atomizecode.com/docs/react/molecules)
 - [Functions](https://atomizecode.com/docs/react/functions)
 
+## 🤩 Examples
+
+- [Search Box](https://codesandbox.io/s/search-box-0fc6c)
+- [Star Rating](https://codesandbox.io/s/star-rating-64ex1)
+- [Login Form](https://codesandbox.io/s/login-form-atomize-ezs4u)
+- [Payment Card](https://codesandbox.io/s/payment-card-42b3c)
+
 ## ⌨️ Development
 
 To clone locally:
@@ -71,13 +78,6 @@ $ npm start
 ```
 
 Open your browser and visit http://localhost:8080
-
-## 🤩 Examples
-
-- [Search Box](https://codesandbox.io/s/search-box-0fc6c)
-- [Star Rating](https://codesandbox.io/s/star-rating-64ex1)
-- [Login Form](https://codesandbox.io/s/login-form-atomize-ezs4u)
-- [Payment Card](https://codesandbox.io/s/payment-card-42b3c)
 
 ## 🤝 Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
