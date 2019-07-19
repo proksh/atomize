@@ -16,12 +16,12 @@ UI Design System for React JS
 
 [![](https://firebasestorage.googleapis.com/v0/b/pawan-dev.appspot.com/o/Screenshot%202019-07-19%20at%2011.16.03%20AM.png?alt=media)](http://atomizecode.com)
 
-✨## Features
+## Features
 
 - UI design system for web apps.
 - Elegant and beautiful React components
 
-🖥 ## Environment Support
+## Environment Support
 
 - Modern browsers and Internet Explorer 9+
 - Server-side Rendering
@@ -31,7 +31,7 @@ UI Design System for React JS
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IE9, IE10, IE11, Edge                                                                                                                                                                                           | last 2 versions                                                                                                                                                                                                   | last 2 versions                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                           | last 2 versions                                                                                                                                                                                                       |
 
-📦 ## Install
+## Install
 
 ```bash
 npm install atomize
@@ -41,14 +41,14 @@ npm install atomize
 yarn add atomize
 ```
 
-🔨 ## Usage
+## Usage
 
 ```jsx
 import { Button } from "atomize";
 ReactDOM.render(<Button />, mountNode);
 ```
 
-🔗 ## Links
+## Links
 
 - [Home page](http://atomizecode.com/)
 - [Getting Started](https://atomizecode.com/docs/react/setup)
@@ -59,14 +59,14 @@ ReactDOM.render(<Button />, mountNode);
 - [Molecules](https://atomizecode.com/docs/react/molecules)
 - [Functions](https://atomizecode.com/docs/react/functions)
 
-🤩 ## Examples
+## Examples
 
 - [Search Box](https://codesandbox.io/s/search-box-0fc6c)
 - [Star Rating](https://codesandbox.io/s/star-rating-64ex1)
 - [Login Form](https://codesandbox.io/s/login-form-atomize-ezs4u)
 - [Payment Card](https://codesandbox.io/s/payment-card-42b3c)
 
-⌨️ ## Development
+##️ Development
 
 To clone locally:
 
@@ -79,6 +79,6 @@ $ npm start
 
 Open your browser and visit http://localhost:8080
 
-🤝 ## Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+## Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Read our [contributing guide](https://atomizecode.com/docs/react/contributing) and let's build a better atomize together.
