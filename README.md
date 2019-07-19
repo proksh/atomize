@@ -10,7 +10,7 @@
 
 UI Design System for React JS
 
- [![npm package](https://img.shields.io/npm/v/atomize.svg?style=flat-square)](https://www.npmjs.org/package/atomize) [![NPM downloads](http://img.shields.io/npm/dm/atomize.svg?style=flat-square)](http://npmjs.com/atomize) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![npm package](https://img.shields.io/npm/v/atomize.svg?style=flat-square)](https://www.npmjs.org/package/atomize) [![NPM downloads](http://img.shields.io/npm/dm/atomize.svg?style=flat-square)](http://npmjs.com/atomize) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 </div>
 
@@ -44,7 +44,7 @@ yarn add atomize
 ## 🔨 Usage
 
 ```jsx
-import { Button } from 'atomize';
+import { Button } from "atomize";
 ReactDOM.render(<Button />, mountNode);
 ```
 
@@ -58,9 +58,10 @@ ReactDOM.render(<Button />, mountNode);
 - [Atoms](https://atomizecode.com/docs/react/atoms)
 - [Molecules](https://atomizecode.com/docs/react/molecules)
 - [Functions](https://atomizecode.com/docs/react/functions)
+
 ## ⌨️ Development
 
-To clone  locally:
+To clone locally:
 
 ```bash
 $ git clone git@github.com:Proksh/atomize.git
@@ -69,7 +70,14 @@ $ npm install // or yarn
 $ npm start
 ```
 
-Open your browser and visit http://localhost:8080 
+Open your browser and visit http://localhost:8080
+
+## 🤩 Examples
+
+- [Search Box](https://codesandbox.io/s/search-box-0fc6c)
+- [Star Rating](https://codesandbox.io/s/star-rating-64ex1)
+- [Login Form](https://codesandbox.io/s/login-form-atomize-ezs4u)
+- [Payment Card](https://codesandbox.io/s/payment-card-42b3c)
 
 ## 🤝 Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
