@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Atomise Code</h1>
+<h1 align="center">Atomize Code</h1>
 
 <div align="center">
 
@@ -66,7 +66,7 @@ ReactDOM.render(<Button />, mountNode);
 - [Login Form](https://codesandbox.io/s/login-form-atomize-ezs4u)
 - [Payment Card](https://codesandbox.io/s/payment-card-42b3c)
 
-##️ Development
+## Development
 
 To clone locally:
 
