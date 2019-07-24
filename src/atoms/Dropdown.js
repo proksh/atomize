@@ -31,6 +31,7 @@ class Dropdown extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
+
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleOutsideClick, false);
   }
@@ -38,7 +39,7 @@ class Dropdown extends Component {
   handleClick() {
     const { isOpen, onClick } = this.props;
 
-    if (isOpen) {
+    if (!isOpen) {
       document.addEventListener("mousedown", this.handleOutsideClick, false);
     } else {
       document.removeEventListener("mousedown", this.handleOutsideClick, false);
