@@ -65,6 +65,7 @@ ReactDOM.render(<Button />, mountNode);
 - [Star Rating](https://codesandbox.io/s/star-rating-64ex1)
 - [Login Form](https://codesandbox.io/s/login-form-atomize-ezs4u)
 - [Payment Card](https://codesandbox.io/s/payment-card-42b3c)
+- [Pokedex](https://warpokex.ri7nz.now.sh/) | [Repository](https://github.com/ri7nz/Warpokex)
 
 ## Development
 
