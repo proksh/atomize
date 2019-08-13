@@ -32,8 +32,8 @@ const StyleReset = createGlobalStyle`
   }
 
   input {
-    border: none;
     font-family: inherit;
+    border: none;
   }
 
   button {
