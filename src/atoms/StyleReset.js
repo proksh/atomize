@@ -31,7 +31,10 @@ const StyleReset = createGlobalStyle`
     text-decoration: none;
   }
 
-  input { border: none }
+  input {
+    font-family: inherit;
+    border: none;
+  }
 
   button {
     border: none;
