@@ -1,20 +1,14 @@
 import React, { Component } from "react";
-import { Div, StyleReset } from "atomize";
+import { Div, StyleReset, Button, Icon } from "atomize";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.node = React.createRef();
-  }
-
-  componentDidMount() {
-    console.log(this.node);
-  }
   render() {
     return (
       <Div>
         <StyleReset />
+        <Button bg="white" title="test">
+          <Icon name="Logout" size="2rem" />
+        </Button>
         <Div
           minH="100vh"
           w="100vw"

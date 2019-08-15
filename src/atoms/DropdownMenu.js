@@ -3,14 +3,7 @@ import React from "react";
 import Div from "./Div";
 
 const DropdownMenu = ({ open, ...rest }) => {
-  return (
-    <Div
-      {...rest}
-      onClick={e => {
-        e.stopPropagation();
-      }}
-    />
-  );
+  return <Div {...rest} />;
 };
 
 DropdownMenu.defaultProps = {
