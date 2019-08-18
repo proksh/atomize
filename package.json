@@ -1,6 +1,6 @@
 {
-  "name": "atomize",
-  "version": "1.0.4",
+  "name": "test-atomize",
+  "version": "1.0.10",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -18,22 +18,22 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@callstack/react-theme-provider": "^3.0.0",
     "babel-loader": "^8.0.6",
     "prism-react-renderer": "^0.1.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-transition-group": "^4.1.1",
-    "styled-components": "^4.3.1",
+    "styletron-engine-atomic": "^1.4.0",
+    "styletron-react": "^5.2.0",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.4.1"
   },
   "peerDependencies": {
-    "@callstack/react-theme-provider": ">= 3.0.0",
     "react": ">= 16",
     "react-dom": ">= 16",
     "react-transition-group": ">= 4",
-    "styled-components": ">= 4"
+    "styletron-engine-atomic": "^1.4.0",
+    "styletron-react": "^5.2.0"
   }
 }
