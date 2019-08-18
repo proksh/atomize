@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Transition } from "react-transition-group";
-
-import Div from "./Div";
+import Div from "../div/Div";
 
 export default class Collapse extends Component {
   constructor() {

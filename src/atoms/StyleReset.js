@@ -1,49 +1,40 @@
-import { createGlobalStyle } from "styled-components";
-import { withTheme } from "../core/theming";
+import React, { Component } from "react";
+import { ThemeContext } from "../core/ThemeContext";
 
-const StyleReset = createGlobalStyle`
-  html {
-    font-size: 16px;
+class StyleReset extends Component {
+  render() {
+    return (
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `html { font-size: 16px } body { font-size: ${
+            this.context.textSize.size.body
+          }; line-height: ${
+            this.context.textSize.height.body
+          }; -webkit-font-smoothing: antialiased; font-family:${
+            this.context.fontFamily.primary
+          }; margin: 0; color: #000; } p, h1, h2, h3, h4, h5, h6 { padding: 0; margin: 0; font-size: ${
+            this.context.textSize.size.body
+          }; line-height: ${
+            this.context.textSize.height.body
+          };} input { border: none; font-family: inherit } a {
+            margin: 0;
+            padding: 0;
+            color: ${this.context.colors.info700};
+            cursor: pointer;
+            text-decoration: none;
+          } button { border: none } pre {
+            margin: 0; padding: 1rem; font-size: ${
+              this.context.textSize.size.body
+            };
+            line-height: ${this.context.textSize.height.body};
+            font-family: ${this.context.fontFamily.code};
+          } :focus {outline-width: thin;}`
+        }}
+      />
+    );
   }
+}
 
-  ::selection {
-    color: #fff;
-    background: #444;
-  }
+StyleReset.contextType = ThemeContext;
 
-  body {
-    font-size: ${props => props.theme.textSize.size["body"]};
-    line-height: ${props => props.theme.textSize.height["body"]};    
-    margin: 0;
-    font-family: ${props => props.theme.fontFamily["primary"]};
-    -webkit-font-smoothing: antialiased;
-    color: #000;
-  }
-
-  p, h1, h2, h3, h4, h5, h6 { font-size: ${props =>
-    props.theme.textSize.size["body"]}; line-height: ${props =>
-  props.theme.textSize.height["body"]}
-  }
-
-  a {
-    color: ${props => props.theme.colors["info700"]};
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  input { border: none }
-
-  button {
-    border: none;
-  }
-
-  pre {
-    margin: 0;
-    padding: 1rem;
-    font-size: ${props => props.theme.textSize.size["caption"]};
-    line-height: ${props => props.theme.textSize.height["body"]};
-    font-family: ${props => props.theme.fontFamily["code"]};
-  }
-`;
-
-export default withTheme(StyleReset);
+export default StyleReset;
