@@ -1,6 +1,6 @@
 {
-  "name": "atomize",
-  "version": "1.0.10",
+  "name": "test-atomize",
+  "version": "1.0.17",
   "main": "index.js",
   "license": "MIT",
   "files": [
