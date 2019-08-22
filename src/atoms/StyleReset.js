@@ -12,7 +12,9 @@ class StyleReset extends Component {
             this.context.textSize.height.body
           }; -webkit-font-smoothing: antialiased; font-family:${
             this.context.fontFamily.primary
-          }; margin: 0; color: #000; } p, h1, h2, h3, h4, h5, h6 { padding: 0; margin: 0; font-size: ${
+          }; margin: 0; color: ${
+            this.context.colors.black
+          }; } p, h1, h2, h3, h4, h5, h6 { padding: 0; margin: 0; font-size: ${
             this.context.textSize.size.body
           }; line-height: ${
             this.context.textSize.height.body
@@ -28,7 +30,7 @@ class StyleReset extends Component {
             };
             line-height: ${this.context.textSize.height.body};
             font-family: ${this.context.fontFamily.code};
-          } :focus {outline-width: thin;}`
+          } :focus {outline: none;}`
         }}
       />
     );
