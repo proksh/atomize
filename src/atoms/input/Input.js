@@ -31,7 +31,7 @@ const Input = React.forwardRef((props, ref) => {
             flexGrow={rest.flexGrow}
           >
             {prefix}
-            <BasicInput {...rest} $as={tag} $styleArray={output[1]} />
+            <BasicInput ref={ref} {...rest} $as={tag} $styleArray={output[1]} />
             {suffix}
             {isLoading && (
               <Icon
