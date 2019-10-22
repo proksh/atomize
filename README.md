@@ -34,11 +34,11 @@ UI Design System for React JS
 ## Install
 
 ```bash
-npm install atomize
+npm install atomize react-transition-group
 ```
 
 ```bash
-yarn add atomize
+yarn add atomize react-transition-group
 ```
 
 ## Usage
