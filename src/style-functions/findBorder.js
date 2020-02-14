@@ -122,7 +122,7 @@ const makeResponsiveBorder = (border, property, themeColors, borderColor) => {
   }
 
   const defaultborderColor =
-    (typeof borderColor === "string" && border) ||
+    (typeof borderColor === "string" && borderColor) ||
     (borderColor && borderColor.xs) ||
     "#000000";
 
