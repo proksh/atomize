@@ -122,8 +122,12 @@ const makeResponsiveBorder = (border, property, themeColors, borderColor) => {
   }
 
   const defaultborderColor =
-    (typeof borderColor === "string" && borderColor) ||
-    (borderColor && borderColor.xs) ||
+    (typeof borderColor === "string" &&
+      borderColor &&
+      (themeColors[borderColor] || borderColor)) ||
+    (borderColor &&
+      borderColor.xs &&
+      (themeColors[borderColor.xs] || borderColor.xs)) ||
     "#000000";
 
   // Give style directly if not an object
