@@ -21,6 +21,7 @@ export { default as Modal } from "./atoms/modal/Modal";
 export { default as SideDrawer } from "./atoms/sidedrawer/SideDrawer";
 export { default as Notification } from "./atoms/notification/Notification";
 export { default as Dropdown } from "./atoms/dropdown/Dropdown";
+export { default as Slider, SliderThumb, SliderFiller, SliderTrack } from "./atoms/slider/Slider";
 // export { default as Avatar } from "./atoms/Avatar";
 // export { default as ButtonGroup } from "./atoms/ButtonGroup";
 // export { default as DropdownMenu } from "./atoms/DropdownMenu";
