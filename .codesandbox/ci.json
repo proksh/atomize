@@ -1,0 +1,30 @@
+{
+  // which script in package.json to run to install instead of `npm ci` or `yarn install`,
+  // can be `false` if you want to skip this step
+  "installCommand": "install",
+  // which script in package.json to run to build,
+  // can be `false` if you want to skip this step
+  "buildCommand": "docs",
+  // if you have a monorepo, put the paths of the packages here. We'll infer the package names.
+  // globs are supported
+  "packages": ["packages/react", "packages/react-dom", 
+    "packages/@babel/cli",
+    "packages/@babel/core",
+    "packages/@babel/preset-env",
+    "packages/@babel/preset-react",
+    "packages/babel-loader",
+    "packages/prism-react-renderer",
+    "packages/react-transition-group",
+    "packages/styletron-engine-atomic",
+    "packages/styletron-react",
+    "packages/webpack",
+    "packages/webpack-cli",
+    "packages/webpack-dev-server"
+  ],
+  // if you don't publish from the package directory, specify per dependency
+  // where the contents of the built dependency are. These files will be uploaded
+  // to our registry
+  "publishDirectory": {
+    "atomize": "dist" 
+  }
+}
