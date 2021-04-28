@@ -17,6 +17,7 @@ export { default as Image } from "./atoms/image/Image";
 export { default as Tag } from "./atoms/tag/Tag";
 export { default as Anchor } from "./atoms/anchor/Anchor";
 export { default as Collapse } from "./atoms/collapse/Collapse";
+export { default as Flex } from "./atoms/Flex";
 export { default as Modal } from "./atoms/modal/Modal";
 export { default as SideDrawer } from "./atoms/sidedrawer/SideDrawer";
 export { default as Notification } from "./atoms/notification/Notification";
