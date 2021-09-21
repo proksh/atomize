@@ -3,8 +3,10 @@
 	"version": "1.0.21",
 	"main": "index.js",
 	"license": "MIT",
+	"typings": "typings/index.d.ts",
 	"files": [
-		"dist"
+		"dist",
+		"typings"
 	],
 	"scripts": {
 		"start": "webpack-dev-server",
