@@ -1,10 +1,13 @@
 import * as React from 'react'
+import { ContainerProps } from './props'
 import THEME from './THEME'
 
 export class StyleReset extends React.Component {}
 
 // ----- Atoms -----
-export function Container(props: React.PropsWithChildren<unknown>): JSX.Element
+export function Container(
+	props: React.PropsWithChildren<ContainerProps>,
+): JSX.Element
 export function Row(props: React.PropsWithChildren<unknown>): JSX.Element
 export function Col(props: React.PropsWithChildren<unknown>): JSX.Element
 export function Div(props: React.PropsWithChildren<unknown>): JSX.Element
