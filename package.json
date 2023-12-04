@@ -11,7 +11,8 @@
     "docs": "NODE_ENV=production webpack -p",
     "build": "babel src -d dist",
     "clean": "rm -rf dist",
-    "dist": "yarn run clean && yarn run build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -b master"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
