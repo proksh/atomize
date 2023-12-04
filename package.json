@@ -1,6 +1,7 @@
 {
   "name": "atomize",
   "version": "1.0.21",
+  "homepage": "https://github.com/mrmichaelque/Atomized-React-App"
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -38,3 +39,4 @@
     "styletron-react": "^5.2.0"
   }
 }
+
